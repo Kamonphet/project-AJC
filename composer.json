@@ -1,0 +1,17 @@
+{
+    "name": "hp/project-ajc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kamonphet",
+            "email": "kamonpach.siri@gmail.com"
+        }
+    ],
+    "require": {
+        "claviska/simpleimage": "^2.5"
+    }
+}
