@@ -7,6 +7,7 @@
     <title>Login</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
+    <!-- <script src="../js/bootstrap.min.js"></script> -->
 </head>
 <body class="d-flex justify-content-center align-items-center mt-3 mb-3 ">
         <!-- Heading -->
@@ -15,7 +16,7 @@
                 <h1 class="text-center text-light">เข้าสู่ระบบ</h1>
             </div>
             <!-- Body -->
-            <div class="class-body">
+            <div class="card-body">
                 <div class="">
                     <img src="../IMG/Picture1.png " style="width: 70%" class="rounded mx-auto d-block mt-3" alt="">
                 </div>
@@ -43,17 +44,32 @@
                         <a href="register.php">หากยังไม่ได้ลงทะเบียน</a>
                     </div>
                     <hr>
-                
-                <form action="search.php" class="p-3">
-                    <div class="m-1">
-                        <label">ค้นหาตารางเรียน : <input type="text" class="form-control" placeholder="กลุ่มผู้เรียน" name="" id=""></label><br>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn bd-indigo-400 rounded-pill ">ค้นหา</button>
-                    </div>
-                </form>
+            
+                <div class="d-grid m-3">
+                    <button  class="btn btn-secondary rounded-pill " data-bs-target="#showtalang" data-bs-toggle="modal">ค้นหาตารางเรียน</button>
+                </div>
+
             </div>
             
         </div>
+
+        <!-- Modal ตารางเรียน -->
+        <div class="modal" id="showtalang" >
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <!-- Head modal -->
+                    <div class="modal-header bg-light">
+                        <h5 class="modal-title">ค้นหาตารางเรียน</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <label for="">ค้นหาตารางเรียน :<input type="text" class="form-control" name="" placeholder="กลุ่มผู้เรียน" id="" method="POST"></label>
+                            <button type="submit" class="btn btn-success">ค้นหา</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
