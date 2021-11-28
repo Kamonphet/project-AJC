@@ -1,3 +1,7 @@
+<?php 
+error_reporting(E_ALL ^ E_WARNING); 
+require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,9 @@
     <title>Login</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
-    <!-- <script src="../js/bootstrap.min.js"></script> -->
+    
 </head>
-<body class="d-flex justify-content-center align-items-center mt-3 mb-3 ">
+<body class="d-flex justify-content-center align-items-center mt-5 mb-3 ">
         <!-- Heading -->
         <div class="card rounded" style="width: 25%;">
             <div class="card-head bd-indigo-400  rounded-top p-3">
@@ -55,21 +59,80 @@
 
         <!-- Modal ตารางเรียน -->
         <div class="modal" id="showtalang" >
-            <div class="modal-dialog modal-md">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <!-- Head modal -->
                     <div class="modal-header bg-light">
                         <h5 class="modal-title">ค้นหาตารางเรียน</h5>
                     </div>
                     <div class="modal-body">
-                        <form action="">
-                            <label for="">ค้นหาตารางเรียน :<input type="text" class="form-control" name="" placeholder="กลุ่มผู้เรียน" id="" method="POST"></label>
+                        <form>
+                            <label for="table">ค้นหาตารางเรียน :<input type="text" class="form-control" name="table" id="table" placeholder="กลุ่มผู้เรียน" id="" method="POST"></label>
                             <button type="submit" class="btn btn-success">ค้นหา</button>
                         </form>
+
+                        <table class='table'>
+                            <thead>
+                                <tr>
+                                    <th>วัน</th>
+                                    <th>เวลาเริ่มเรียน</th>
+                                    <th>รหัสวิชา</th>
+                                    <th>ชื่อวิชา</th>
+                                    <th>ชื่อผู้สอน</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $table=$_REQUEST['table'];
+                                    use App\Model\Talanglearn;
+                                     use App\Model\Talanglearn2;
+                                     
+                                    if($table){
+                                            if ($table=='ED2ED67'){
+                                                $talanglearnObj = new Talanglearn();
+                                                $talanglearn  = $talanglearnObj->getAllTalanglearn();
+                                                foreach($talanglearn as $Talang){
+                                                    echo"
+                                                        <tr>
+                                                            <td>{$Talang['days']}</td>
+                                                            <td>{$Talang['learn_time']}</td>
+                                                            <td>{$Talang['subject_id']}</td>
+                                                            <td>{$Talang['subject_name']}</td>
+                                                            <td>{$Talang['teacher_name']}</td>
+                                                        </tr> 
+                                                    ";                                 
+                                                }
+                                            }elseif ($table=='ED1ED67'){
+                                                $talanglearn2Obj = new Talanglearn2();
+                                                $talanglearn2  = $talanglearn2Obj->getAllTalanglearn2();
+                                                foreach($talanglearn2 as $Talang2){
+                                                    echo"
+                                                        <tr>
+                                                            <td>{$Talang2['days']}</td>
+                                                            <td>{$Talang2['learn_time']}</td>
+                                                            <td>{$Talang2['subject_id']}</td>
+                                                            <td>{$Talang2['subject_name']}</td>
+                                                            <td>{$Talang2['teacher_name']}</td>
+                                                        </tr>
+                                                    ";                                  
+                                                }
+                                            }
+                                    }
+                                ?>
+                            </tbody>
+                            <tfoot >
+                                <tr class=''>
+                                    <td><button class='btn btn-danger' data-bs-target='#showtalang' data-bs-toggle='modal'>ปิด</button></td> 
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
