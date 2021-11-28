@@ -14,8 +14,6 @@ if ($_REQUEST['action']=='edit') {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,18 +23,20 @@ if ($_REQUEST['action']=='edit') {
     <title>Boonraksa System</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    
 </head>
-<body>
+<body class="bd-indigo-100">
     <?php require $_SERVER['DOCUMENT_ROOT']."/project-ajc/index/navbar.php";?>  
     <!-- Main -->
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row mt-3 align-items-center">
             <!-- Col8 -->
-            <div class="col-sm">
-                <div class="card">
-                    <div class="card-head text-center bg-light">
+            <div class="col-md ">
+                <div class="card btn-bd-light">
+                    <div class="card-head text-center bd-purple-300 text-white rounded">
                         <h4>ตารางเรียน</h4>
-                        <h4><?php echo "{$_SESSION['firstname']} ({$_SESSION['major']}) กลุ่มผู้เรียน {$_SESSION['grouplearn']} ";?></h4>
+                        <h5><?php echo "{$_SESSION['firstname']} ({$_SESSION['major']}) กลุ่มผู้เรียน {$_SESSION['grouplearn']} ";?></h5>
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -91,9 +91,7 @@ if ($_REQUEST['action']=='edit') {
                             </tbody>
                             <!-- ปุ่มดูงานทั้งหมด -->
                             <tfoot >
-                                <tr class="">
                                     <td><button class="btn btn-danger" data-bs-target="#showmd" data-bs-toggle="modal">กดเพื่อดูงานทั้งหมด</button></td> 
-                                </tr>
                             </tfoot>
                         </table>
                     </div>
@@ -103,16 +101,15 @@ if ($_REQUEST['action']=='edit') {
     </div>
     
     <!-- Modal -->
-    <div class="modal" id="showmd">
+    <div class="modal fade " id="showmd">
         <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
+            <div class="modal-content btn-bd-light">
+                <div class="modal-header bd-purple-300 text-white">
                     <h5 class="modal-title">งานในชั้นเรียน</h5>
                     <div style="text-align: center;">
                         <h5><?php echo "{$_SESSION['firstname']} ({$_SESSION['major']}) กลุ่มผู้เรียน {$_SESSION['grouplearn']}";?></h5>
                     </div>
                 </div>
-                
                 <div class="modal-body">
                     <table class="table" style="text-align: center;"">
                         <thead>
@@ -154,7 +151,7 @@ if ($_REQUEST['action']=='edit') {
                         </tbody>
                     </table>
                 </div>
-            <div class="modal-footer bg-light">
+            <div class="modal-footer bd-purple-100 ">
                 <a href="creatework.php" class="btn bd-green-400 justify-content-end text-white">เพิ่มงาน</a>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>               
             </div>

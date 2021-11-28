@@ -24,17 +24,17 @@ if ($_REQUEST['action']=='edit') {
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
 </head>
-<body>
+<body class="bd-indigo-100">
     <?php require $_SERVER['DOCUMENT_ROOT']."/project-ajc/index/navbar.php";?>
     <div class="container">
         <div class="row mt-5">
             <div class="col">
-                <div class="card mb-3">
-                    <div class="card-header bd-blue-200 text-white d-flex justify-content-between">
+                <div class="card btn-bd-light">
+                    <div class="card-header bd-indigo-200 text-white d-flex justify-content-between ">
                         <h4><?php echo ($_REQUEST['action']=='edit')? "แก้ไขงาน" : "เพิ่มงาน"; ?></h4>
                         <a href="mainpage.php" class="btn btn-light">ย้อนกลับ</a>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body text-black">
                         <div style="text-align: center;">
                             <h3><?php echo "{$_SESSION['firstname']} ({$_SESSION['major']}) กลุ่มผู้เรียน {$_SESSION['grouplearn']}";?></h3>
                         </div>
@@ -82,7 +82,7 @@ if ($_REQUEST['action']=='edit') {
                             </div> 
                             <div  class="form-group">
                                 <label for="dates">วันส่งงาน</label>
-                                <input type="date" name="dates" id="dates" class="form-control" value="<?php echo $work['dates']?>" required>
+                                <input type="date" name="dates" id="dates" class="form-control" value="<?php echo $work['dates']?>" required></input>
                             </div><br>
                             <button type="submit" class="btn bd-green-400 text-white">เสร็จสิ้น</button>
                             <button type="reset" class="btn bd-red-400 text-white">รีเซ็ท</button>

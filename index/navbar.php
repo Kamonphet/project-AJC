@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav w-100 justify-content-end">
                     <li class="nav-item dropdown ml-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle h5 text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo "{$_SESSION['firstname']} ({$_SESSION['role']})";?>
                         </a>
                         <div class="dropdown-menu dropdown-menu-md-end" aria-labelledby="navbarDropdown">
