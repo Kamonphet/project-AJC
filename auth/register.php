@@ -8,11 +8,12 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
 </head>
-<body class="  d-flex justify-content-center align-items-center mt-3 mb-3" >
+<body class="  d-flex justify-content-center align-items-center mt-5 mb-3 bd-purple-100" >
     
-        <div class="card" style="width: 25%;">
+        <div class="card btn-bd-light" style="width: 25%;">
             <div class="card-head bd-indigo-400 rounded-top p-3">
-                <h1 class="text-center text-light">ลงทะเบียน</h1>
+                <h3 class="text-center text-light">ลงทะเบียน</h3>
+                <h1 class="text-center text-light">Boonraksa System</h1>
             </div>
             <div class="class-body rounded-bottom">
                 <div class="">
@@ -31,7 +32,7 @@
                     <label for="name">รหัสผ่าน</label>
                     <input type="password" name="password" id="password" class="form-control" required>
                 </div>
-                    <div class="form-group">
+                    <div class="form-group mt-3 mb-2">
                         <label">เอก สาขาที่เรียน : 
                             <select name="major" id="major">
                                 <option value="">------------------</option>
@@ -49,9 +50,13 @@
                         <label for="name">กลุ่มผู้เรียน</label>
                         <input type="text" name="grouplearn" id="grouplearn" class="form-control" required>
                     </div><br>
-                    <button type="submit" class="btn bd-indigo-400 rounded-pill text-white">ลงทะเบียน</button>
+                    <div class="d-grid">
+                        <button type="submit" class="btn bd-indigo-400 rounded-pill text-white">ลงทะเบียน</button>
+                    </div>
                 </form>
-                <a href="login.php">หากเคยลงทะเบียนแล้ว</a>
+                <div class="text-center mb-3">
+                    <a href="login.php">หากเคยลงทะเบียนแล้ว</a>
+                </div>
             </div>
         </div>
 </body>

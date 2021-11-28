@@ -2,6 +2,7 @@
 error_reporting(E_ALL ^ E_WARNING); 
 require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +12,14 @@ require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
     <title>Login</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
-    
+    <script src="../js/jquery-3.6.0.min.js"></script>
 </head>
-<body class="d-flex justify-content-center align-items-center mt-5 mb-3 ">
+<body class="d-flex justify-content-center align-items-center mt-5 mb-3 bd-purple-100">
         <!-- Heading -->
-        <div class="card rounded" style="width: 25%;">
+        <div class="card rounded btn-bd-light" style="width: 25%;">
             <div class="card-head bd-indigo-400  rounded-top p-3">
-                <h1 class="text-center text-light">เข้าสู่ระบบ</h1>
+                <h3 class="text-center text-light">เข้าสู่ระบบ</h3>
+                <h1 class="text-center text-light">Boonraksa System</h1>
             </div>
             <!-- Body -->
             <div class="card-body">
@@ -25,7 +27,7 @@ require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
                     <img src="../IMG/Picture1.png " style="width: 70%" class="rounded mx-auto d-block mt-3" alt="">
                 </div>
                 <!-- Form -->
-                <form action="checklogin.php" class="mb-3" method="POST">
+                <form action="checklogin.php" class="mb-3" method="POST" id="login">
                     <?php
                     error_reporting(E_ALL ^ E_WARNING); 
                         if($_GET['msg']){
@@ -48,7 +50,7 @@ require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
                         <a href="register.php">หากยังไม่ได้ลงทะเบียน</a>
                     </div>
                     <hr>
-            
+                
                 <div class="d-grid m-3">
                     <button  class="btn btn-secondary rounded-pill " data-bs-target="#showtalang" data-bs-toggle="modal">ค้นหาตารางเรียน</button>
                 </div>
@@ -58,17 +60,17 @@ require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
         </div>
 
         <!-- Modal ตารางเรียน -->
-        <div class="modal" id="showtalang" >
+        <div class="modal fade" id="showtalang" >
             <div class="modal-dialog modal-xl">
-                <div class="modal-content">
+                <div class="modal-content btn-bd-light ">
                     <!-- Head modal -->
-                    <div class="modal-header bg-light">
+                    <div class="modal-header bd-indigo-300 text-white">
                         <h5 class="modal-title">ค้นหาตารางเรียน</h5>
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <label for="table">ค้นหาตารางเรียน :<input type="text" class="form-control" name="table" id="table" placeholder="กลุ่มผู้เรียน" id="" method="POST"></label>
-                            <button type="submit" class="btn btn-success">ค้นหา</button>
+                    <div class="modal-body text-black">
+                        <form method="GET">
+                            <label for="table">ค้นหาตารางเรียน <input type="text" class="form-control" name="table" id="table" placeholder="กลุ่มผู้เรียน" required></label>
+                            <button type="submit" class="btn btn-success" onclick="alert('ค้นหาสำเร็จ')">ค้นหา</button>
                         </form>
 
                         <table class='table'>
@@ -131,7 +133,6 @@ require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
                 </div>
             </div>
         </div>
-
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
