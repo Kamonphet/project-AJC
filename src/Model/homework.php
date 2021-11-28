@@ -17,7 +17,6 @@ class Homework extends Db {
                 homework.dates,
                 talanglearn.subject_name AS work_subject_name
                 
-
             FROM 
                 homework
             LEFT JOIN talanglearn ON
@@ -31,7 +30,7 @@ class Homework extends Db {
         return  $data;
 
     }
-
+    
     public function getAllHomework2(){
         //ส่งคำสั่งไปเรียกข้อมูลทั้งหมดของตารางเรียน
         $sql ="
@@ -78,6 +77,7 @@ class Homework extends Db {
         $sql="
         DELETE FROM homework WHERE id = ?
         ";
+        
         $stmt= $this->pdo->prepare($sql);
         $stmt->execute([$id]);
         
