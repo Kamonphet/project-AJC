@@ -1,3 +1,6 @@
+<?php
+require $_SERVER['DOCUMENT_ROOT']."../project-ajc/auth/auth.php";
+?>
 <!-- Nav Head -->
 <nav class="navbar navbar-expand-lg bd-indigo-400 navbar-dark py-3">
     <!-- Content -->
