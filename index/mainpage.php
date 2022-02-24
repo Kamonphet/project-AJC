@@ -2,7 +2,7 @@
 <?php 
 error_reporting(E_ALL ^ E_WARNING); 
 require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
-require $_SERVER['DOCUMENT_ROOT']."../project-ajc/auth/auth.php";
+// require $_SERVER['DOCUMENT_ROOT']."../project-ajc/auth/auth.php";
 
 use App\Model\Talanglearn;
 use App\Model\Talanglearn2;
@@ -48,7 +48,7 @@ if ($_REQUEST['action']=='edit') {
                                     <th>ชื่อวิชา</th>
                                     <th>ชื่อผู้สอน</th>
                                     <th>ลิงค์เรียน</th>
-                
+                 
                                 </tr> 
                             </thead>
                             <tbody>
@@ -144,7 +144,7 @@ if ($_REQUEST['action']=='edit') {
                                             class='btn bd-green-400 text-white'>แก้ไข</a></td>
                                             <td><a href='savework.php?id={$work['id']}&action=delete'
                                             class='btn bd-red-400 text-white'>ลบ</a></td> 
-                                        </tr>                                  
+                                        </tr>  
                                     ";
                                 }
                             ?>

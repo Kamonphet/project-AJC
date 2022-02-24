@@ -5,7 +5,7 @@ namespace App\Model;
 use App\Database\Db;
 
 
-class user  extends Db {
+class user extends Db {
     
     public function createUser($user){
 
@@ -29,7 +29,8 @@ class user  extends Db {
 
         $stmt= $this->pdo->prepare($sql);
         $stmt->execute($user);
-
+        
+        
         session_start();
         $_SESSION['firstname'] = $user['firstname'];
         $_SESSION['password'] = $user['password'];
@@ -75,3 +76,4 @@ class user  extends Db {
     }
 
 }
+?>

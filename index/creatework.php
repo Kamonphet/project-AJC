@@ -2,7 +2,7 @@
 <?php 
 error_reporting(E_ALL ^ E_WARNING); 
 require $_SERVER['DOCUMENT_ROOT']."../project-ajc/vendor/autoload.php";
-require $_SERVER['DOCUMENT_ROOT']."../project-ajc/auth/auth.php";
+// require $_SERVER['DOCUMENT_ROOT']."../project-ajc/auth/auth.php";
 
 use App\Model\Homework;
 use App\Model\Talanglearn;
@@ -10,7 +10,7 @@ use App\Model\Talanglearn2;
 
 if ($_REQUEST['action']=='edit') {
     $workObj = new Homework;
-    $work = $workObj->gethomeworkByid($_REQUEST['id']);
+    $work = $workObj->gethomeworkByid($_REQUEST['id']); 
 }
 ?>
 
@@ -20,7 +20,7 @@ if ($_REQUEST['action']=='edit') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boonraksa System</title>
+    <title>เพิ่มงาน</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/colors_bt5.css" rel="stylesheet">
 </head>
